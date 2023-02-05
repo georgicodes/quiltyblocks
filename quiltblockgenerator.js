@@ -5,7 +5,10 @@ let noCells = 5;
 let cellSize = canvasSize / noCells;
 let palette = []
 let blockSelection = [""]
-let allowedBlockTypes = [BlockNames.HST, BlockNames.FOUR_PATCH, BlockNames.MARYS_TRIANGLE]
+let allowedBlockTypes = [
+  BlockNames.HST, BlockNames.FOUR_PATCH, BlockNames.MARYS_TRIANGLE, BlockNames.RECTANGLES, BlockNames.HST_SQUARED,
+  BlockNames.BIRDS_IN_THE_AIR, BlockNames.QST, BlockNames.CORNER_BEAM, BlockNames.FLYING_GEESE
+]
 let selectedBlockTypes = new Map();
 
 // create a canvas
@@ -74,141 +77,49 @@ function drawBlock(x, y, cellSize) {
   let r = Math.round(random(0, selectedBlockTypes.size - 1));
   randomBlockType = Array.from(selectedBlockTypes.keys())[r]
 
-  let randomShapes = true;
-
-  if (randomShapes == true) {
-
-    switch (randomBlockType) {
-      case BlockNames.HST:
-        block = new BlockHST(cellSize, Orientation.RANDOM);
-        block.draw();
-        break;
-      case BlockNames.FOUR_PATCH:
-        block = new BlockFourPatch(cellSize, Orientation.RANDOM);
-        block.draw();
-        break;
-      case BlockNames.MARYS_TRIANGLE:
-        block = new BlockMarysTriangle(cellSize, Orientation.RANDOM);
-        block.draw();
-        break;
-        case BlockNames.HST_SQUARED:
-          block = new BlockHSTSquared(cellSize, Orientation.RANDOM);
-          block.draw();
-          break;
-    }
-    // if (shape == 2) {
-    //   blockFourPatch(cellSize);
-    // } else if (shape == 6) {
-    //   blockMarysTriangle(cellSize);
-    // } else if (shape == 7) {
-    //   blockHSTSquared(cellSize);
-    // } else if (shape == 8) {
-    //   blockRectanglesVertical(cellSize, 0);
-    // } else if (shape == 9) {
-    //   blockHourGlassTopBottom(cellSize);
-    // } else if (shape == 10) {
-    //   blockSquareInSquare(cellSize);
-    // } else if (shape == 11) {
-    //   blockRectanglesHorizontal(cellSize, 0)
-    // } else if (shape == 12) {
-    //   blockCornerBeamTop(cellSize)
-    // } else if (shape == 13) {
-    //   blockCornerBeamBottom(cellSize)
-    // } else if (shape == 14) {
-    //   blockHourGlassLeftRight(cellSize)
-    // } else if (shape == 15) {
-    //   blockBirdsInTheAir(cellSize)
-    // }
-    // else if (shape == 16) {
-    //   blockFlyingGeese(cellSize)
-    // }
-  } else {
-    blockHST(cellSize)
+  switch (randomBlockType) {
+    case BlockNames.HST:
+      block = new BlockHST(cellSize, Orientation.RANDOM);
+      block.draw();
+      break;
+    case BlockNames.FOUR_PATCH:
+      block = new BlockFourPatch(cellSize, Orientation.RANDOM);
+      block.draw();
+      break;
+    case BlockNames.MARYS_TRIANGLE:
+      block = new BlockMarysTriangle(cellSize, Orientation.RANDOM);
+      block.draw();
+      break;
+    case BlockNames.HST_SQUARED:
+      block = new BlockHSTSquared(cellSize, Orientation.RANDOM);
+      block.draw();
+      break;
+    case BlockNames.RECTANGLES:
+      block = new BlockRectangles(cellSize, Orientation.RANDOM, 4);
+      block.draw();
+      break;
+    case BlockNames.BIRDS_IN_THE_AIR:
+      block = new BlockBirdsInTheAir(cellSize, Orientation.RANDOM);
+      block.draw();
+      break;
+    case BlockNames.FLYING_GEESE:
+      block = new BlockFlyingGeese(cellSize, Orientation.RANDOM);
+      block.draw();
+      break;
+    case BlockNames.CORNER_BEAM:
+      block = new BlockCornerBeam(cellSize, Orientation.RANDOM);
+      block.draw();
+      break;
+    case BlockNames.QST:
+      block = new BlockQST(cellSize, Orientation.RANDOM, true);
+      block.draw();
+      break;
+    case BlockNames.SQUARE_IN_SQUARE:
+      block = new BlockSquareInSquare(cellSize, Orientation.RANDOM);
+      block.draw();
+      break;
   }
-
   pop();
-}
-
-function blockHST(cellSize) {
-  let type = Math.round(random(1, 4));
-
-  if (type == 1) {
-    blockHST1(cellSize);
-  } else if (type == 2) {
-    blockHST2(cellSize);
-  } else if (type == 3) {
-    blockHST3(cellSize);
-  } else if (type == 4) {
-    blockHST4(cellSize);
-  }
-}
-
-function blockHST1(cellSize) {
-  push();
-  randomGreenyYelloColorFill();
-  noStroke();
-  triangle(0, 0, cellSize, 0, 0, cellSize);
-  pop();
-}
-
-function blockHST2(cellSize) {
-  push();
-  randomGreenyYelloColorFill();
-  noStroke();
-  triangle(0, cellSize, cellSize, 0, cellSize, cellSize);
-  pop();
-}
-
-function blockHST3(cellSize) {
-  push();
-  randomGreenyYelloColorFill();
-  noStroke();
-  triangle(0, 0, cellSize, cellSize, 0, cellSize);
-  pop();
-}
-
-function blockHST4(cellSize) {
-  push();
-  randomGreenyYelloColorFill();
-  noStroke();
-  triangle(0, 0, cellSize, 0, cellSize, cellSize);
-  pop();
-}
-
-function blockCornerBeamTop(cellSize) {
-  push();
-  randomGreenyYelloColorFill();
-  noStroke();
-  triangle(0, 0, 0, cellSize, cellSize / 2, cellSize);
-  triangle(0, 0, cellSize, 0, cellSize, cellSize / 2);
-  pop();
-}
-
-function blockCornerBeamBottom(cellSize) {
-  push();
-  randomGreenyYelloColorFill();
-  noStroke();
-  triangle(0, cellSize / 2, 0, cellSize, cellSize, cellSize);
-  triangle(cellSize / 2, 0, cellSize, 0, cellSize, cellSize);
-  pop();
-}
-
-function blockFourPatch(cellSize) {
-  push();
-  randomGreenyYelloColorFill();
-  noStroke();
-  square(0, 0, cellSize / 2);
-  square(cellSize / 2, cellSize / 2, cellSize / 2);
-  pop();
-}
-
-function blockMarysTriangle(cellSize) {
-  push();
-  randomGreenyYelloColorFill();
-  noStroke();
-  square(0, cellSize / 2, cellSize / 2);
-  pop();
-  blockHST4(cellSize)
 }
 
 // TODO
@@ -236,17 +147,6 @@ function blockHSTSquared(cellSize) {
   pop();
 }
 
-function blockBirdsInTheAir(cellSize) {
-  push();
-  randomGreenyYelloColorFill();
-  noStroke();
-  triangle(0, cellSize / 2, cellSize / 2, cellSize / 2, cellSize / 2, 0);
-  triangle(0, cellSize, cellSize / 2, cellSize, cellSize / 2, cellSize / 2);
-  triangle(cellSize / 2, cellSize / 2, cellSize, cellSize / 2, cellSize / 2, cellSize)
-  triangle(cellSize / 2, cellSize / 2, cellSize, cellSize / 2, cellSize, 0)
-  pop();
-}
-
 function blockHalfSquareLeft(cellSize) {
   push();
   randomGreenyYelloColorFill();
@@ -271,90 +171,11 @@ function blockHalfSquareRight(cellSize) {
   pop();
 }
 
-function blockHourGlassLeftRight(cellSize) {
-  push();
-  randomGreenyYelloColorFill();
-  noStroke();
-  triangle(0, 0, cellSize / 2, cellSize / 2, 0, cellSize);
-  triangle(cellSize, 0, cellSize / 2, cellSize / 2, cellSize, cellSize);
-  pop();
-}
-
-function blockHourGlassTopBottom(cellSize) {
-  push();
-  randomGreenyYelloColorFill();
-  noStroke();
-  triangle(0, 0, cellSize, 0, cellSize / 2, cellSize / 2);
-  triangle(cellSize, cellSize, cellSize / 2, cellSize / 2, 0, cellSize);
-  pop();
-}
-
-function blockFlyingGeese(cellSize) {
-  push();
-  randomGreenyYelloColorFill();
-  noStroke();
-  triangle(0, 0, cellSize, 0, cellSize / 2, cellSize / 2);
-  triangle(0, cellSize / 2, cellSize, cellSize / 2, cellSize / 2, cellSize);
-  pop();
-}
-
 function blockCellSquare(cellSize) {
   push();
   // fill('#FFFFFF')
   square(0, 0, cellSize);
   // noStroke();
-  pop();
-}
-
-function blockSquareInSquare(cellSize) {
-  push();
-  randomGreenyYelloColorFill();
-  noStroke();
-  square(cellSize / 4, cellSize / 4, cellSize / 2);
-  pop();
-}
-
-function blockRectanglesHorizontal(cellSize, noRectangles) {
-  console.log("rectangle shape requested")
-  if (noRectangles == 0) {
-    noRectangles = Math.round(random(4, 6));
-  }
-  push();
-  noStroke();
-  rectHeight = cellSize / noRectangles
-  let idx = 0;
-  for (let y = 0; y < cellSize; y += rectHeight) {
-    if (idx % 2 == 0) {
-      randomGreenyYelloColorFill();
-    } else {
-      fillWhite();
-    }
-    rect(0, y, cellSize, rectHeight);
-    idx++;
-  }
-  noStroke();
-  pop();
-}
-
-function blockRectanglesVertical(cellSize, noRectangles) {
-  console.log("rectangle vertical shape requested")
-  if (noRectangles == 0) {
-    noRectangles = Math.round(random(4, 6));
-  }
-  push();
-  noStroke();
-  let rectHeight = cellSize / noRectangles
-  let idx = 0;
-  for (let x = 0; x < cellSize; x += rectHeight) {
-    if (idx % 2 == 0) {
-      randomGreenyYelloColorFill();
-    } else {
-      fillWhite();
-    }
-    rect(x, 0, rectHeight, cellSize);
-    idx++;
-  }
-  noStroke();
   pop();
 }
 
