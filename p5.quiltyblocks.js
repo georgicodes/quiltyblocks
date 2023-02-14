@@ -38,7 +38,7 @@ function BlockHST(cellSize, orientation) {
 
     this.blockHST1 = function () {
         push();
-        randomGreenyYelloColorFill();
+        fillWithFabricPull();
         noStroke();
         triangle(0, 0, this.cellSize, 0, 0, this.cellSize);
         pop();
@@ -46,7 +46,7 @@ function BlockHST(cellSize, orientation) {
 
     this.blockHST2 = function () {
         push();
-        randomGreenyYelloColorFill();
+        fillWithFabricPull();
         noStroke();
         triangle(0, this.cellSize, this.cellSize, 0, this.cellSize, this.cellSize);
         pop();
@@ -54,7 +54,7 @@ function BlockHST(cellSize, orientation) {
 
     this.blockHST3 = function () {
         push();
-        randomGreenyYelloColorFill();
+        fillWithFabricPull();
         noStroke();
         triangle(0, 0, this.cellSize, this.cellSize, 0, this.cellSize);
         pop();
@@ -62,7 +62,7 @@ function BlockHST(cellSize, orientation) {
 
     this.blockHST4 = function () {
         push();
-        randomGreenyYelloColorFill();
+        fillWithFabricPull();
         noStroke();
         triangle(0, 0, this.cellSize, 0, this.cellSize, this.cellSize);
         pop();
@@ -88,7 +88,7 @@ function BlockFourPatch(cellSize, orientation) {
 
     this.block = function () {
         push();
-        randomGreenyYelloColorFill();
+        fillWithFabricPull();
         noStroke();
         square(0, 0, this.cellSize / 2);
         square(this.cellSize / 2, this.cellSize / 2, this.cellSize / 2);
@@ -115,7 +115,7 @@ function BlockMarysTriangle(cellSize, orientation) {
 
     this.block = function () {
         push();
-        randomGreenyYelloColorFill();
+        fillWithFabricPull();
         noStroke();
         square(0, this.cellSize / 2, this.cellSize / 2);
         pop();
@@ -142,7 +142,7 @@ function BlockHSTSquared(cellSize, orientation) {
 
     this.block = function () {
         push();
-        randomGreenyYelloColorFill();
+        fillWithFabricPull();
         noStroke();
         square(0, this.cellSize / 2, this.cellSize / 2);
         triangle(0, 0, this.cellSize / 2, 0, this.cellSize / 2, this.cellSize / 2);
@@ -188,7 +188,7 @@ function BlockRectangles(cellSize, orientation, noRectangles) {
         let idx = 0;
         for (let x = 0; x < this.cellSize; x += rectHeight) {
             if (idx % 2 == 0) {
-                randomGreenyYelloColorFill();
+                fillWithFabricPull();
             } else {
                 fillWhite();
             }
@@ -210,7 +210,7 @@ function BlockRectangles(cellSize, orientation, noRectangles) {
         let idx = 0;
         for (let y = 0; y < this.cellSize; y += rectHeight) {
             if (idx % 2 == 0) {
-                randomGreenyYelloColorFill();
+                fillWithFabricPull();
             } else {
                 fillWhite();
             }
@@ -243,7 +243,7 @@ function BlockQST(cellSize, orientation, isHourGlass) {
 
     this.blockHourGlassLeftRight = function () {
         push();
-        randomGreenyYelloColorFill();
+        fillWithFabricPull();
         noStroke();
         triangle(0, 0, this.cellSize / 2, this.cellSize / 2, 0, this.cellSize);
         triangle(cellSize, 0, this.cellSize / 2, this.cellSize / 2, this.cellSize, this.cellSize);
@@ -252,7 +252,7 @@ function BlockQST(cellSize, orientation, isHourGlass) {
 
     this.blockHourGlassTopBottom = function () {
         push();
-        randomGreenyYelloColorFill();
+        fillWithFabricPull();
         noStroke();
         triangle(0, 0, this.cellSize, 0, this.cellSize / 2, this.cellSize / 2);
         triangle(cellSize, this.cellSize, this.cellSize / 2, this.cellSize / 2, 0, this.cellSize);
@@ -279,7 +279,7 @@ function BlockBirdsInTheAir(cellSize, orientation) {
 
     this.block = function () {
         push();
-        randomGreenyYelloColorFill();
+        fillWithFabricPull();
         noStroke();
         triangle(0, this.cellSize / 2, this.cellSize / 2, this.cellSize / 2, this.cellSize / 2, 0);
         triangle(0, this.cellSize, this.cellSize / 2, this.cellSize, this.cellSize / 2, this.cellSize / 2);
@@ -308,7 +308,7 @@ function BlockFlyingGeese(cellSize, orientation) {
 
     this.block = function () {
         push();
-        randomGreenyYelloColorFill();
+        fillWithFabricPull();
         noStroke();
         triangle(0, 0, cellSize, 0, cellSize / 2, cellSize / 2);
         triangle(0, cellSize / 2, cellSize, cellSize / 2, cellSize / 2, cellSize);
@@ -339,7 +339,7 @@ function BlockCornerBeam(cellSize, orientation) {
 
     this.blockCornerBeamTop = function () {
         push();
-        randomGreenyYelloColorFill();
+        fillWithFabricPull();
         noStroke();
         triangle(0, 0, 0, this.cellSize, this.cellSize / 2, this.cellSize);
         triangle(0, 0, this.cellSize, 0, this.cellSize, this.cellSize / 2);
@@ -348,7 +348,7 @@ function BlockCornerBeam(cellSize, orientation) {
 
     this.blockCornerBeamBottom = function () {
         push();
-        randomGreenyYelloColorFill();
+        fillWithFabricPull();
         noStroke();
         triangle(0, this.cellSize / 2, 0, this.cellSize, this.cellSize, this.cellSize);
         triangle(this.cellSize / 2, 0, this.cellSize, 0, this.cellSize, this.cellSize);
@@ -375,7 +375,7 @@ function BlockSquareInSquare(cellSize, orientation) {
 
     this.block = function () {
         push();
-        randomGreenyYelloColorFill();
+        fillWithFabricPull();
         noStroke();
         square(this.cellSize / 4, this.cellSize / 4, this.cellSize / 2);
         pop();

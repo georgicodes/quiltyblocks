@@ -1,14 +1,1850 @@
 <html>
-  <head>
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
-    <script src="p5.quiltyblocks.js"></script>
-    <script src="quiltblockgenerator.js"></script>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <main>
-        <h1 id="foo">YAY Stitch Generative Art</h1>
-        <p>A Study in angles.</p>
-    </main>
-  </body>
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
+  <script src="p5.quiltyblocks.js"></script>
+  <script src="quiltblockgenerator.js"></script>
+  <link rel="stylesheet" href="quiltgenerator.css">
+</head>
+
+<body>
+  <main>
+    <h1 id="foo">YAY Stitch Generative Art</h1>
+    <div class="flex-parent-element">
+      <div id="qb_container" class="flex-child-element"></div>
+      <div id="qb_controls" class="flex-child-element"></div>
+      <div class="flex-child-element">
+        <div class="palette">
+          <div class="palette_box">
+            <div data-color="#fdc3cf" class="palette_color dfivZu"></div>
+            <div class="color_name">baby pink</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fec2c7" class="palette_color jzyiIv"></div>
+            <div class="color_name">peony</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#feafb9" class="palette_color bQlbcs"></div>
+            <div class="color_name">med. pink</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fd9abb" class="palette_color jnmBYr"></div>
+            <div class="color_name">carnation</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fe99af" class="palette_color ehKLvX"></div>
+            <div class="color_name">bubble gum</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fd8dbb" class="palette_color jJFGHU"></div>
+            <div class="color_name">candy pink</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fd6db0" class="palette_color kIAyzG"></div>
+            <div class="color_name">sassy pink</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#f154a1" class="palette_color bOgrgu"></div>
+            <div class="color_name">dragon fruit</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#f14fa2" class="palette_color dWYuYb"></div>
+            <div class="color_name">brt. pink</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#f42b78" class="palette_color ksWNpe"></div>
+            <div class="color_name">honeysuckle</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#d93280" class="palette_color fLCSik"></div>
+            <div class="color_name">valentine</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#a32662" class="palette_color kphxAs"></div>
+            <div class="color_name">cerise</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fcd5cd" class="palette_color hqZsjf"></div>
+            <div class="color_name">ballet slipper</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fdc1c4" class="palette_color hfneDB"></div>
+            <div class="color_name">pink</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fdc1be" class="palette_color hHDTFv"></div>
+            <div class="color_name">bellini</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fec6b9" class="palette_color koRexc"></div>
+            <div class="color_name">dusty peach</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fbb1ac" class="palette_color cAhThw"></div>
+            <div class="color_name">primrose</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fd8088" class="palette_color lbpRxU"></div>
+            <div class="color_name">melon</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fb6075" class="palette_color dqDCyY"></div>
+            <div class="color_name">camellia</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fc5980" class="palette_color fFNgOj"></div>
+            <div class="color_name">azalea</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#f95266" class="palette_color iMXgBk"></div>
+            <div class="color_name">punch</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#f73251" class="palette_color kKLzgW"></div>
+            <div class="color_name">watermelon</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#d90b56" class="palette_color bYMAPO"></div>
+            <div class="color_name">pomegranate</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#a11147" class="palette_color kGPVkH"></div>
+            <div class="color_name">sangria</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fee5e3" class="palette_color drHGDo"></div>
+            <div class="color_name">pearl pink</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#feb99f" class="palette_color laxfaT"></div>
+            <div class="color_name">peach</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fd9576" class="palette_color dRHNZJ"></div>
+            <div class="color_name">creamsicle</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fa856d" class="palette_color bctRHI"></div>
+            <div class="color_name">salmon</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#f64c42" class="palette_color kfRamk"></div>
+            <div class="color_name">coral</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#d40e27" class="palette_color iCyqpl"></div>
+            <div class="color_name">red</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#c60525" class="palette_color kvQYic"></div>
+            <div class="color_name">cardinal</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#931727" class="palette_color ihskoW"></div>
+            <div class="color_name">chinese red</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#a4111e" class="palette_color fjUPkY"></div>
+            <div class="color_name">rich red</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#a41020" class="palette_color hUHzhK"></div>
+            <div class="color_name">ruby</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#9b1c2c" class="palette_color fbLVTJ"></div>
+            <div class="color_name">wine</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#7a1926" class="palette_color hksfKc"></div>
+            <div class="color_name">crimson</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#f66744" class="palette_color hOANhI"></div>
+            <div class="color_name">nectarine</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fd6b45" class="palette_color eykRNm"></div>
+            <div class="color_name">orangeade</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fc712c" class="palette_color eMHzoy"></div>
+            <div class="color_name">carrot</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fd690b" class="palette_color jlFSXF"></div>
+            <div class="color_name">torch</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#f95d09" class="palette_color dXacYr"></div>
+            <div class="color_name">tangerine</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#f03f05" class="palette_color IOjaA"></div>
+            <div class="color_name">flame</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#e82819" class="palette_color hmhdJZ"></div>
+            <div class="color_name">chili</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#e53b1f" class="palette_color kPCxiY"></div>
+            <div class="color_name">pimento</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#dc261d" class="palette_color FyICu"></div>
+            <div class="color_name">tomato</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#ee0921" class="palette_color lnNOnn"></div>
+            <div class="color_name">lipstick</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#db1c27" class="palette_color SBeTN"></div>
+            <div class="color_name">poppy</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#ac332a" class="palette_color jhjADW"></div>
+            <div class="color_name">cayenne</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#feb302" class="palette_color ercinX"></div>
+            <div class="color_name">sunny</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fda608" class="palette_color egaXTn"></div>
+            <div class="color_name">papaya</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#f58e06" class="palette_color vQKkA"></div>
+            <div class="color_name">nacho cheese</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fe911c" class="palette_color deMrBv"></div>
+            <div class="color_name">school bus</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#ec8819" class="palette_color aSbDo"></div>
+            <div class="color_name">saffron</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fd7a04" class="palette_color fScPGQ"></div>
+            <div class="color_name">orange</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fa740c" class="palette_color kiCfqJ"></div>
+            <div class="color_name">clementine</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#e9691d" class="palette_color fZAmSG"></div>
+            <div class="color_name">marmalade</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fd7621" class="palette_color iQitGl"></div>
+            <div class="color_name">kumquat</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fd7e32" class="palette_color eDVwtg"></div>
+            <div class="color_name">persimmon</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fd864e" class="palette_color ePlJLt"></div>
+            <div class="color_name">mango</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fd9f5e" class="palette_color fgLbNg"></div>
+            <div class="color_name">cantaloupe</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fdca4f" class="palette_color henqmZ"></div>
+            <div class="color_name">sunflower</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fdc761" class="palette_color eCqsjw"></div>
+            <div class="color_name">daffodil</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fdb445" class="palette_color cKEyPC"></div>
+            <div class="color_name">cheddar</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fdae54" class="palette_color hkaFvh"></div>
+            <div class="color_name">mac and cheese</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fe9a30" class="palette_color eIcGoW"></div>
+            <div class="color_name">goldfish</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#e68c30" class="palette_color uEvbX"></div>
+            <div class="color_name">amber</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#c96c18" class="palette_color flqaAv"></div>
+            <div class="color_name">cedar</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#c47721" class="palette_color RSKUE"></div>
+            <div class="color_name">gold</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#c98948" class="palette_color eXQqqY"></div>
+            <div class="color_name">caramel</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#c6842a" class="palette_color dWnMXz"></div>
+            <div class="color_name">yarrow</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#eda041" class="palette_color hFKlQb"></div>
+            <div class="color_name">butterscotch</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#efa938" class="palette_color jQTJeU"></div>
+            <div class="color_name">ochre</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fed37b" class="palette_color bxuJoW"></div>
+            <div class="color_name">banana</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fedc72" class="palette_color eYuDBX"></div>
+            <div class="color_name">buttercup</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fedc7c" class="palette_color iddbuI"></div>
+            <div class="color_name">lemon</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fee34c" class="palette_color cWVuXl"></div>
+            <div class="color_name">bright idea</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fdd516" class="palette_color NkzHd"></div>
+            <div class="color_name">citrus</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#f9cf3c" class="palette_color bPVZUJ"></div>
+            <div class="color_name">canary</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#feb824" class="palette_color hfTvuY"></div>
+            <div class="color_name">corn yellow</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fec41a" class="palette_color bZaahJ"></div>
+            <div class="color_name">duckling</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#ebc531" class="palette_color cuXej"></div>
+            <div class="color_name">banana pepper</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#dd9603" class="palette_color bDYOHb"></div>
+            <div class="color_name">grellow</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#ca9522" class="palette_color bjOxlw"></div>
+            <div class="color_name">curry</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fed28e" class="palette_color jWhsda"></div>
+            <div class="color_name">mustard</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fbe8ad" class="palette_color fwkmNO"></div>
+            <div class="color_name">meringue</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fde3b0" class="palette_color ivHXve"></div>
+            <div class="color_name">butter</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fee799" class="palette_color kLDGGs"></div>
+            <div class="color_name">maize</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fefbb0" class="palette_color hIVajE"></div>
+            <div class="color_name">lemon ice</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#e0d38e" class="palette_color gRdvLh"></div>
+            <div class="color_name">celery</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#dbc66c" class="palette_color cAVDss"></div>
+            <div class="color_name">zucchini</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#e6ca30" class="palette_color diqAZp"></div>
+            <div class="color_name">wasabi</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#b79d04" class="palette_color hyZuml"></div>
+            <div class="color_name">pickle</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#b3aa4b" class="palette_color TGQdq"></div>
+            <div class="color_name">artichoke</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#968f2f" class="palette_color cCdrWd"></div>
+            <div class="color_name">olive</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#979527" class="palette_color hATgqn"></div>
+            <div class="color_name">bonsai</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#81922e" class="palette_color bgRxcs"></div>
+            <div class="color_name">gecko</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#c7dc64" class="palette_color cSchkc"></div>
+            <div class="color_name">sprout</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#dcf255" class="palette_color gDybeq"></div>
+            <div class="color_name">key lime</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#f4f722" class="palette_color jEPEVf"></div>
+            <div class="color_name">acid lime</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#cee15c" class="palette_color iBMcuB"></div>
+            <div class="color_name">cactus</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#c7c94a" class="palette_color dsVNLk"></div>
+            <div class="color_name">limelight</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#bad135" class="palette_color iSOoWS"></div>
+            <div class="color_name">chartreuse</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#bcbc08" class="palette_color ePeovn"></div>
+            <div class="color_name">peapod</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#8f9a24" class="palette_color gGStbl"></div>
+            <div class="color_name">lime</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#739442" class="palette_color lfbhfC"></div>
+            <div class="color_name">grass green</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#798b23" class="palette_color gQyoCZ"></div>
+            <div class="color_name">peridot</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#7e7c41" class="palette_color hocED"></div>
+            <div class="color_name">ivy</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#575714" class="palette_color hbMvrs"></div>
+            <div class="color_name">avocado</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#dfed9b" class="palette_color guJiMi"></div>
+            <div class="color_name">summer pear</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#d9e88c" class="palette_color iOODpp"></div>
+            <div class="color_name">honey dew</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#c1d07a" class="palette_color csyRWk"></div>
+            <div class="color_name">green tea</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#adc568" class="palette_color hyOkDU"></div>
+            <div class="color_name">cabbage</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#71d659" class="palette_color iaUoQn"></div>
+            <div class="color_name">sour apple</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#7bbc53" class="palette_color jqesUr"></div>
+            <div class="color_name">botanical</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#64be24" class="palette_color bxGJdN"></div>
+            <div class="color_name">parrot</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#22ba3d" class="palette_color fTWhBg"></div>
+            <div class="color_name">kiwi</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#50bd50" class="palette_color cDjvmE"></div>
+            <div class="color_name">leprechaun</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#25951b" class="palette_color kuWLPa"></div>
+            <div class="color_name">grasshopper</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#29722a" class="palette_color BFHtY"></div>
+            <div class="color_name">jungle</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#075b32" class="palette_color ikLDqO"></div>
+            <div class="color_name">pesto</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#c9fbc5" class="palette_color jSZJQj"></div>
+            <div class="color_name">mint</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#97e787" class="palette_color hyLYFo"></div>
+            <div class="color_name">pear</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#7ad993" class="palette_color fwFuWP"></div>
+            <div class="color_name">parakeet</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#64db95" class="palette_color hqHHCg"></div>
+            <div class="color_name">ferndale</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#87cf82" class="palette_color cCbMAt"></div>
+            <div class="color_name">asparagus</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#7cc47b" class="palette_color AWhYs"></div>
+            <div class="color_name">pistachio</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#2ab866" class="palette_color ikiOFr"></div>
+            <div class="color_name">fern</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#0ea055" class="palette_color eyMppM"></div>
+            <div class="color_name">clover</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#038352" class="palette_color ceGKUr"></div>
+            <div class="color_name">holly</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#036546" class="palette_color fNnyCi"></div>
+            <div class="color_name">balsam</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#036b52" class="palette_color iNqDkr"></div>
+            <div class="color_name">willow</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#0a4f34" class="palette_color gvlDKv"></div>
+            <div class="color_name">kelly</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#b7bb76" class="palette_color AIpfk"></div>
+            <div class="color_name">tarragon</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#99c58a" class="palette_color dOjtgW"></div>
+            <div class="color_name">spring</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#85b47e" class="palette_color dCXCOD"></div>
+            <div class="color_name">celadon</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#7cab7b" class="palette_color kyATzq"></div>
+            <div class="color_name">old green</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#6ba268" class="palette_color eNTAsp"></div>
+            <div class="color_name">laurel</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#559f5e" class="palette_color dZkbxY"></div>
+            <div class="color_name">leaf</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#607953" class="palette_color jrplLJ"></div>
+            <div class="color_name">dill</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#4c713b" class="palette_color kUjYKR"></div>
+            <div class="color_name">palm</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#406535" class="palette_color bBxowp"></div>
+            <div class="color_name">basil</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#2b4c2c" class="palette_color jyVawc"></div>
+            <div class="color_name">juniper</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#184832" class="palette_color oEqh"></div>
+            <div class="color_name">forest</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#2d452f" class="palette_color kLTHWh"></div>
+            <div class="color_name">hunter green</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#8ef5d9" class="palette_color gOJKIQ"></div>
+            <div class="color_name">aruba</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#99e8bd" class="palette_color iygkVl"></div>
+            <div class="color_name">pond</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#7ed6b5" class="palette_color iGHfBB"></div>
+            <div class="color_name">aloe</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#1dc59d" class="palette_color eSKYHq"></div>
+            <div class="color_name">cypress</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#03a77d" class="palette_color cEUzQX"></div>
+            <div class="color_name">kale</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#06a486" class="palette_color jEiFeh"></div>
+            <div class="color_name">bluegrass</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#03715f" class="palette_color kQpkqB"></div>
+            <div class="color_name">emerald</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#03655c" class="palette_color gDDBdZ"></div>
+            <div class="color_name">ultra marine</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#036a73" class="palette_color jyahyM"></div>
+            <div class="color_name">glacier</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#035854" class="palette_color iCqJGU"></div>
+            <div class="color_name">everglade</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#09473a" class="palette_color gESVXk"></div>
+            <div class="color_name">spruce</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#2e4127" class="palette_color iCgJtZ"></div>
+            <div class="color_name">evergreen</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#d2fee2" class="palette_color jkQYho"></div>
+            <div class="color_name">sea mist</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#acf4e1" class="palette_color jRgvYb"></div>
+            <div class="color_name">ice frappe</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#93f7e3" class="palette_color bIVzkl"></div>
+            <div class="color_name">aloha</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#1addd0" class="palette_color gUNmTW"></div>
+            <div class="color_name">pool</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#2fd9be" class="palette_color NjtTi"></div>
+            <div class="color_name">candy green</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#66b7a6" class="palette_color biYPFT"></div>
+            <div class="color_name">sage</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#6ae8e9" class="palette_color cYMttN"></div>
+            <div class="color_name">azure</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#3ee0e1" class="palette_color jurinZ"></div>
+            <div class="color_name">capri</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#03a3ad" class="palette_color kHYCwh"></div>
+            <div class="color_name">breakers</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#03989a" class="palette_color fUCirs"></div>
+            <div class="color_name">jade green</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#03708b" class="palette_color hjIOqF"></div>
+            <div class="color_name">caribbean</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#346e7e" class="palette_color kFXvfZ"></div>
+            <div class="color_name">teal blue</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#c8fcfd" class="palette_color ilPqeh"></div>
+            <div class="color_name">sea glass</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#a9f2e9" class="palette_color jovdog"></div>
+            <div class="color_name">aqua</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#8eebfa" class="palette_color kJgLAq"></div>
+            <div class="color_name">robin egg</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#6ce7f7" class="palette_color cxQqdm"></div>
+            <div class="color_name">bahama blue</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#26cfe7" class="palette_color jqTirA"></div>
+            <div class="color_name">jamaica</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#17b6dd" class="palette_color byaLbZ"></div>
+            <div class="color_name">peacock</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#039ccc" class="palette_color iJFoxR"></div>
+            <div class="color_name">lagoon</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#0399c2" class="palette_color jTITqN"></div>
+            <div class="color_name">turquoise</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#038ea7" class="palette_color dANmTx"></div>
+            <div class="color_name">cyan</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#036990" class="palette_color ZFpNL"></div>
+            <div class="color_name">oasis</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#03609d" class="palette_color dTTqHe"></div>
+            <div class="color_name">mediterranean</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#03506f" class="palette_color bXPalC"></div>
+            <div class="color_name">celestial</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#e2f6f5" class="palette_color eQkfDl"></div>
+            <div class="color_name">sky</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#b5e3ef" class="palette_color jcWgiW"></div>
+            <div class="color_name">baby blue</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#97c9ca" class="palette_color kboKUi"></div>
+            <div class="color_name">dusty blue</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#9bbdc4" class="palette_color WZErn"></div>
+            <div class="color_name">fog</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#78bad4" class="palette_color gnVMQp"></div>
+            <div class="color_name">waterfall</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#68c2d7" class="palette_color kUhnJs"></div>
+            <div class="color_name">seascape</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#4dc2e8" class="palette_color bdfszU"></div>
+            <div class="color_name">niagara</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#40b5e3" class="palette_color gUlaXM"></div>
+            <div class="color_name">alegria</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#18a6da" class="palette_color bCODIj"></div>
+            <div class="color_name">water</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#0990ce" class="palette_color kCeFVO"></div>
+            <div class="color_name">paris blue</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#037cc9" class="palette_color ddBcV"></div>
+            <div class="color_name">malibu</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#035ea2" class="palette_color jpsrJa"></div>
+            <div class="color_name">pacific</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#b6d7e4" class="palette_color eOlddd"></div>
+            <div class="color_name">blue</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#a5d7ef" class="palette_color iSlzQH"></div>
+            <div class="color_name">breeze</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#a7daf4" class="palette_color iYuIPb"></div>
+            <div class="color_name">lake</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#83c7f5" class="palette_color gswNYx"></div>
+            <div class="color_name">prairie sky</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#35a5df" class="palette_color dyLGJk"></div>
+            <div class="color_name">stratosphere</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#2f84d6" class="palette_color gXAaqL"></div>
+            <div class="color_name">astral</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#2572b4" class="palette_color ljjTMl"></div>
+            <div class="color_name">harbor</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#065ca2" class="palette_color cyCAdv"></div>
+            <div class="color_name">surf</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#0554a3" class="palette_color cQURNt"></div>
+            <div class="color_name">blueprint</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#183c94" class="palette_color gNrxgN"></div>
+            <div class="color_name">ocean</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#033482" class="palette_color dfjinJ"></div>
+            <div class="color_name">riviera</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#113b80" class="palette_color iItOGG"></div>
+            <div class="color_name">marine</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#99d2ed" class="palette_color bJzavt"></div>
+            <div class="color_name">spa blue</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#7eafd2" class="palette_color bVYHnw"></div>
+            <div class="color_name">blueberry</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#76a1cb" class="palette_color cjklZJ"></div>
+            <div class="color_name">candy blue</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#75a8de" class="palette_color dXYGnN"></div>
+            <div class="color_name">periwinkle</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#7198d9" class="palette_color dwqzoO"></div>
+            <div class="color_name">blue jay</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#6282b2" class="palette_color bmWlSQ"></div>
+            <div class="color_name">denim</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#6688a8" class="palette_color dyjKxU"></div>
+            <div class="color_name">dresden blue</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#51809d" class="palette_color jWRJMb"></div>
+            <div class="color_name">delft</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#4e7eaa" class="palette_color ksoxQd"></div>
+            <div class="color_name">evening</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#4576ad" class="palette_color dOSJuK"></div>
+            <div class="color_name">copen</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#44637c" class="palette_color dMTriM"></div>
+            <div class="color_name">cadet</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#5d6b82" class="palette_color fcKtLn"></div>
+            <div class="color_name">slate</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#c7e6fb" class="palette_color gWVgmk"></div>
+            <div class="color_name">cloud</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#a0bfda" class="palette_color dxogNF"></div>
+            <div class="color_name">blue bell</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#99c4ea" class="palette_color ddaHsI"></div>
+            <div class="color_name">cornflower</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#8ca4db" class="palette_color jUWctQ"></div>
+            <div class="color_name">grapemist</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#526cb5" class="palette_color gdXob"></div>
+            <div class="color_name">hyacinth</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#485b9e" class="palette_color dHxQkc"></div>
+            <div class="color_name">lapis</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#1f5689" class="palette_color bueCmb"></div>
+            <div class="color_name">regatta</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#034184" class="palette_color hmbGei"></div>
+            <div class="color_name">royal</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#05355a" class="palette_color gzZDbZ"></div>
+            <div class="color_name">prussian</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#254350" class="palette_color jmUnET"></div>
+            <div class="color_name">windsor</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#0c283f" class="palette_color cgLRjm"></div>
+            <div class="color_name">storm</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#0f2d36" class="palette_color kijJuP"></div>
+            <div class="color_name">navy</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#e2c9ea" class="palette_color gSIpCi"></div>
+            <div class="color_name">princess</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#b5a2be" class="palette_color beYkLu"></div>
+            <div class="color_name">lilac</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#9c90bb" class="palette_color iEQFHM"></div>
+            <div class="color_name">lavender</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#796ea9" class="palette_color gFmKco"></div>
+            <div class="color_name">amethyst</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#614a94" class="palette_color dOoyUg"></div>
+            <div class="color_name">brt. peri</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#454390" class="palette_color eaklzY"></div>
+            <div class="color_name">noble purple</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#304484" class="palette_color jRFLTH"></div>
+            <div class="color_name">deep blue</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#2a2a5b" class="palette_color bDVyJn"></div>
+            <div class="color_name">regal</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#142a59" class="palette_color etiJfQ"></div>
+            <div class="color_name">nightfall</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#351e43" class="palette_color cEchrN"></div>
+            <div class="color_name">midnight</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#122239" class="palette_color hUWHgu"></div>
+            <div class="color_name">nautical</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#112732" class="palette_color irBSSL"></div>
+            <div class="color_name">indigo</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#ebcbe0" class="palette_color iWnMKA"></div>
+            <div class="color_name">orchid</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#d4b6d8" class="palette_color hfokQo"></div>
+            <div class="color_name">thistle</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#bda2cf" class="palette_color cBAXVH"></div>
+            <div class="color_name">orchid ice</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#a27ebe" class="palette_color cEQcii"></div>
+            <div class="color_name">wisteria</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#a36aae" class="palette_color cCsQkU"></div>
+            <div class="color_name">dahlia</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#8a63a8" class="palette_color jpJsEe"></div>
+            <div class="color_name">morning glory</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#6f4a93" class="palette_color fuofwA"></div>
+            <div class="color_name">heliotrope</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#86549a" class="palette_color hesoqH"></div>
+            <div class="color_name">crocus</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#563087" class="palette_color btGYoK"></div>
+            <div class="color_name">velvet</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#67447d" class="palette_color etRvgY"></div>
+            <div class="color_name">tulip</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#472960" class="palette_color mDAWr"></div>
+            <div class="color_name">purple</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#502445" class="palette_color cVsNlA"></div>
+            <div class="color_name">hibiscus</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#f8c8e7" class="palette_color cFnENv"></div>
+            <div class="color_name">petunia</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#eda5db" class="palette_color cmnDW"></div>
+            <div class="color_name">corsage</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#c88cc7" class="palette_color iIeakL"></div>
+            <div class="color_name">pansy</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#c790bc" class="palette_color hMyZZb"></div>
+            <div class="color_name">lupine</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#a76a9d" class="palette_color lfpovZ"></div>
+            <div class="color_name">violet</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#d560a4" class="palette_color eOfxNy"></div>
+            <div class="color_name">gumdrop</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#9b5496" class="palette_color gukGgw"></div>
+            <div class="color_name">magenta</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#9b3885" class="palette_color gTeqYo"></div>
+            <div class="color_name">geranium</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#672a6c" class="palette_color dJgZHt"></div>
+            <div class="color_name">mulberry</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#792b6e" class="palette_color fjjALn"></div>
+            <div class="color_name">dk. violet</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#72164d" class="palette_color gsbEKc"></div>
+            <div class="color_name">berry</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#592343" class="palette_color iEydKu"></div>
+            <div class="color_name">eggplant</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fcbcd6" class="palette_color fSJJnk"></div>
+            <div class="color_name">petal</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#d993bf" class="palette_color etLuNn"></div>
+            <div class="color_name">ballerina</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#ec909a" class="palette_color TDVnl"></div>
+            <div class="color_name">woodrose</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#e87790" class="palette_color jhhSEj"></div>
+            <div class="color_name">blush pink</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#b44054" class="palette_color kOvFMi"></div>
+            <div class="color_name">deep rose</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#d8a0a5" class="palette_color buAsEl"></div>
+            <div class="color_name">foxglove</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#c8857f" class="palette_color ffwJSo"></div>
+            <div class="color_name">rose</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#954764" class="palette_color hQydyk"></div>
+            <div class="color_name">plum</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#690b36" class="palette_color dhVQp"></div>
+            <div class="color_name">bordeaux</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#68222a" class="palette_color emiDeg"></div>
+            <div class="color_name">garnet</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#5b1d2a" class="palette_color hClKWU"></div>
+            <div class="color_name">burgundy</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#421e2f" class="palette_color dvNGkh"></div>
+            <div class="color_name">raisin</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#bf563e" class="palette_color bAOSyU"></div>
+            <div class="color_name">sienna</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#c34d20" class="palette_color jpqVvP"></div>
+            <div class="color_name">terracotta</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#b44f24" class="palette_color iEzeDg"></div>
+            <div class="color_name">spice</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#af331b" class="palette_color cNBauQ"></div>
+            <div class="color_name">paprika</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#953b1f" class="palette_color fTlkev"></div>
+            <div class="color_name">cinnamon</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#6e2215" class="palette_color joqKes"></div>
+            <div class="color_name">cocoa</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#66231f" class="palette_color jtITSw"></div>
+            <div class="color_name">brick</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#5b332f" class="palette_color dYVPUr"></div>
+            <div class="color_name">mahogany</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#643123" class="palette_color hxVVPP"></div>
+            <div class="color_name">brown</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#4c3c2b" class="palette_color lgVhzk"></div>
+            <div class="color_name">chocolate</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#453325" class="palette_color hqwxmj"></div>
+            <div class="color_name">coffee</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#292426" class="palette_color dkeDhT"></div>
+            <div class="color_name">espresso</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#c8a278" class="palette_color kxYphm"></div>
+            <div class="color_name">wheat</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#bca581" class="palette_color fxVzeP"></div>
+            <div class="color_name">latte</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#a98b5c" class="palette_color fSFqHN"></div>
+            <div class="color_name">biscuit</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#a38468" class="palette_color eIWMCo"></div>
+            <div class="color_name">taupe</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#957231" class="palette_color hasouP"></div>
+            <div class="color_name">leather</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#8d560b" class="palette_color iWicCV"></div>
+            <div class="color_name">roasted pecan</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#7e5a34" class="palette_color caGbyh"></div>
+            <div class="color_name">earth</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#6d5437" class="palette_color kxlYTT"></div>
+            <div class="color_name">sable</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#674732" class="palette_color kenoXW"></div>
+            <div class="color_name">mocha</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#654e32" class="palette_color iBYsVJ"></div>
+            <div class="color_name">cappuccino</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#5b4011" class="palette_color bDGNEo"></div>
+            <div class="color_name">chestnut</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#544834" class="palette_color kSqPUN"></div>
+            <div class="color_name">otter</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#f6f2e9" class="palette_color kGkxWf"></div>
+            <div class="color_name">natural</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#f3f0de" class="palette_color drIBkb"></div>
+            <div class="color_name">oyster</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fde7c3" class="palette_color hvAjuY"></div>
+            <div class="color_name">eggshell</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fee3bc" class="palette_color hhkKra"></div>
+            <div class="color_name">cream</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#eee7cb" class="palette_color foDpXW"></div>
+            <div class="color_name">putty</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#f0deca" class="palette_color dpGISF"></div>
+            <div class="color_name">sand</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#dbc9a5" class="palette_color XTEuO"></div>
+            <div class="color_name">tan</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#eee0bc" class="palette_color jiFCtr"></div>
+            <div class="color_name">champagne</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#dcccaa" class="palette_color cSdeKw"></div>
+            <div class="color_name">khaki</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#cfb089" class="palette_color cEuGyF"></div>
+            <div class="color_name">raffia</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#e1c989" class="palette_color loeyOx"></div>
+            <div class="color_name">scone</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#cfb46d" class="palette_color hnujjk"></div>
+            <div class="color_name">honey</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fdcfb5" class="palette_color epriL"></div>
+            <div class="color_name">ice peach</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fedfc5" class="palette_color fWxZLi"></div>
+            <div class="color_name">lt. parfait</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#fee6e2" class="palette_color bELSYe"></div>
+            <div class="color_name">shell</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#ebd8ca" class="palette_color dSmGiR"></div>
+            <div class="color_name">lingerie</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#ebe4d1" class="palette_color llgShf"></div>
+            <div class="color_name">ivory</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#c7bba4" class="palette_color cQKuUG"></div>
+            <div class="color_name">parchment</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#b9a689" class="palette_color fIOUvD"></div>
+            <div class="color_name">stone</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#a6886d" class="palette_color fJjXQx"></div>
+            <div class="color_name">cobblestone</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#796646" class="palette_color dsrvOu"></div>
+            <div class="color_name">bison</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#928369" class="palette_color ySfsE"></div>
+            <div class="color_name">mushroom</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#c5b9a9" class="palette_color GlZCk"></div>
+            <div class="color_name">doeskin</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#a18474" class="palette_color hWXQaK"></div>
+            <div class="color_name">suede</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#cee0d2" class="palette_color cwkqEe"></div>
+            <div class="color_name">desert green</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#bde1c7" class="palette_color gpTDFH"></div>
+            <div class="color_name">seafoam</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#d9d7a8" class="palette_color dQDzxG"></div>
+            <div class="color_name">eucalyptus</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#ccb27e" class="palette_color FsBdy"></div>
+            <div class="color_name">straw</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#c4b78f" class="palette_color eYNqXv"></div>
+            <div class="color_name">limestone</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#baaa78" class="palette_color eaLsPv"></div>
+            <div class="color_name">parsley</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#a38c55" class="palette_color ceOhbB"></div>
+            <div class="color_name">sweet pea</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#675726" class="palette_color dawppM"></div>
+            <div class="color_name">moss</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#7b8e69" class="palette_color gxvlhy"></div>
+            <div class="color_name">o.d. green</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#8a7855" class="palette_color jUnWju"></div>
+            <div class="color_name">herb</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#9c978a" class="palette_color ctWUrl"></div>
+            <div class="color_name">smoke</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#888171" class="palette_color eDTRLI"></div>
+            <div class="color_name">zinc</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#f6f6f8" class="palette_color dGIWti"></div>
+            <div class="color_name">white</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#f5f5f3" class="palette_color gMYBNX"></div>
+            <div class="color_name">pfd bleach wht</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#f6f4e8" class="palette_color fqwOIB"></div>
+            <div class="color_name">snow</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#f7f6ec" class="palette_color figxjE"></div>
+            <div class="color_name">bone</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#e9eae4" class="palette_color evYAQT"></div>
+            <div class="color_name">haze</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#e4edea" class="palette_color grxxXL"></div>
+            <div class="color_name">dove</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#e0e1e5" class="palette_color hubGIZ"></div>
+            <div class="color_name">silver</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#cccbc9" class="palette_color kWcJTU"></div>
+            <div class="color_name">shadow</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#c4cad3" class="palette_color dSFged"></div>
+            <div class="color_name">quicksilver</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#cad5d3" class="palette_color fSnguS"></div>
+            <div class="color_name">lighthouse</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#b8b6ab" class="palette_color gZylia"></div>
+            <div class="color_name">shitake</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#878579" class="palette_color hRClfZ"></div>
+            <div class="color_name">pewter</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#cac3bd" class="palette_color gxtiwX"></div>
+            <div class="color_name">ash</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#879b90" class="palette_color jYpkrM"></div>
+            <div class="color_name">shale</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#8b959e" class="palette_color fQhzYp"></div>
+            <div class="color_name">titanium</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#acb4b7" class="palette_color JGWZW"></div>
+            <div class="color_name">iron</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#9ba3a5" class="palette_color OSgaV"></div>
+            <div class="color_name">overcast</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#808d95" class="palette_color kAuNSO"></div>
+            <div class="color_name">shark</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#767581" class="palette_color hHOCLS"></div>
+            <div class="color_name">med. grey</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#5e656b" class="palette_color hpSFED"></div>
+            <div class="color_name">steel</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#4e5c64" class="palette_color cRVvRS"></div>
+            <div class="color_name">chalkboard</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#555f61" class="palette_color eMBxWC"></div>
+            <div class="color_name">metal</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#5c5a5b" class="palette_color gPTptp"></div>
+            <div class="color_name">coal</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#343434" class="palette_color jvKGfO"></div>
+            <div class="color_name">charcoal</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#5f6563" class="palette_color esJsku"></div>
+            <div class="color_name">graphite</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#615e55" class="palette_color ipdYlX"></div>
+            <div class="color_name">grizzly</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#414a47" class="palette_color clnhRT"></div>
+            <div class="color_name">gotham grey</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#263435" class="palette_color iQVkna"></div>
+            <div class="color_name">pepper</div>
+            <div class="selected"></div>
+         </div>
+         <div class="palette_box">
+            <div data-color="#242625" class="palette_color haeWXE"></div>
+            <div class="color_name">black</div>
+            <div class="selected"></div>
+         </div>
+        </div>
+        <button id="clearFabricPull">Clear Fabric Pull</button>
+      </div>
+    </div>
+  </main>
+</body>
+
 </html>

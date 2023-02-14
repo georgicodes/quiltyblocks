@@ -3,8 +3,8 @@ let blockCountHeight = 5;
 let canvasSize = 500;
 let noCells = 5;
 let cellSize = canvasSize / noCells;
-let palette = []
-let blockSelection = [""]
+let palette = ["#f7f6ec", "#cac3bd", "#03a3ad", "#fd8088", "#feb99f"]
+let blockSelection = []
 let allowedBlockTypes = [
   BlockNames.HST, BlockNames.FOUR_PATCH, BlockNames.MARYS_TRIANGLE, BlockNames.RECTANGLES, BlockNames.HST_SQUARED,
   BlockNames.BIRDS_IN_THE_AIR, BlockNames.QST, BlockNames.CORNER_BEAM, BlockNames.FLYING_GEESE
@@ -18,25 +18,58 @@ function setup() {
   // colorPicker.position(0, 0);
 
   // queryColorMind();
-  createCanvas(canvasSize, canvasSize);
-
-  // generate quilt button
-  generateButton = createButton('generate quilt');
-  generateButton.position(0, 0);
-  generateButton.mousePressed(generateQuilt);
+  let canvas = createCanvas(canvasSize, canvasSize);
+  canvas.parent('qb_container');
 
   if (document.body.addEventListener) {
     document.body.addEventListener('click', blockSelectionHandler, false);
-  }
-  else {
+  } else {
     document.body.attachEvent('onclick', blockSelectionHandler);//for IE
   }
 
   for (let i = 0; i < allowedBlockTypes.length; i++) {
     let checkbox = createCheckbox(allowedBlockTypes[i], true);
+    checkbox.parent('qb_controls');
     selectedBlockTypes.set(allowedBlockTypes[i], allowedBlockTypes[i])
   }
+
+  // generate quilt button
+  generateButton = createButton('generate quilt');
+  generateButton.mousePressed(generateQuilt);
+  generateButton.parent('qb_controls');
+
+  setFabricPullDivColour();
+  
+  let cfp = document.getElementById('clearFabricPull');
+  cfp.addEventListener('click', clearFabricPull, false)
+
   noLoop();
+}
+
+function setFabricPullDivColour() {
+  let fp = document.getElementsByClassName('palette_color');
+  let labels = document.getElementsByClassName('color_name');
+
+  for (let i = 0; i < fp.length; i++) {
+    let paletteElement = fp[i]
+    let hex_val = paletteElement.getAttribute("data-color");
+    paletteElement.style.backgroundColor = hex_val
+    let labelElem = labels[i]
+    paletteElement.setAttribute("title", labelElem.innerHTML)
+    labelElem.style.visibility = 'hidden';
+    paletteElement.addEventListener('click', addToFabricPull, false)
+  }
+}
+
+function clearFabricPull(e) {
+  palette = []
+}
+
+function addToFabricPull(e) {
+  var target = e.target || e.srcElement;
+  let hex_val = target.getAttribute("data-color");
+  palette.push(hex_val)
+  console.log('added' + hex_val)
 }
 
 function blockSelectionHandler(e) {
@@ -125,7 +158,7 @@ function drawBlock(x, y, cellSize) {
 // TODO
 function blockPlus(cellSize) {
   push();
-  randomGreenyYelloColorFill();
+  fillWithFabricPull();
   // noStroke();
   let gap = 10;
   let sqX = cellSize / 3 - gap / 2;
@@ -139,7 +172,7 @@ function blockPlus(cellSize) {
 
 function blockHSTSquared(cellSize) {
   push();
-  randomGreenyYelloColorFill();
+  fillWithFabricPull();
   noStroke();
   square(0, cellSize / 2, cellSize / 2);
   triangle(0, 0, cellSize / 2, 0, cellSize / 2, cellSize / 2);
@@ -149,7 +182,7 @@ function blockHSTSquared(cellSize) {
 
 function blockHalfSquareLeft(cellSize) {
   push();
-  randomGreenyYelloColorFill();
+  fillWithFabricPull();
   noStroke();
   rect(0, 0, cellSize / 2, cellSize);
   pop();
@@ -157,7 +190,7 @@ function blockHalfSquareLeft(cellSize) {
 
 function blockHalfSquareMiddle(cellSize) {
   push();
-  randomGreenyYelloColorFill();
+  fillWithFabricPull();
   noStroke();
   rect(0, cellSize / 3, cellSize, cellSize / 3);
   pop();
@@ -165,7 +198,7 @@ function blockHalfSquareMiddle(cellSize) {
 
 function blockHalfSquareRight(cellSize) {
   push();
-  randomGreenyYelloColorFill();
+  fillWithFabricPull();
   noStroke();
   rect(cellSize / 2, 0, cellSize / 2, cellSize);
   pop();
@@ -181,7 +214,7 @@ function blockCellSquare(cellSize) {
 
 function blockCircle(x, y, cellSize) {
   push();
-  randomGreenyYelloColorFill();
+  fillWithFabricPull();
   circle(x, y, cellSize);
   noStroke();
   pop();
@@ -189,7 +222,7 @@ function blockCircle(x, y, cellSize) {
 
 function blockArcTopLeft(x, y, cellSize) {
   push();
-  randomGreenyYelloColorFill();
+  fillWithFabricPull();
   let arcSize = cellSize - 10;
   arc(0, 0, arcSize, arcSize, radians(180), radians(270));
   noStroke();
@@ -198,7 +231,7 @@ function blockArcTopLeft(x, y, cellSize) {
 
 function blockArcTopRight(x, y, cellSize) {
   push();
-  randomGreenyYelloColorFill();
+  fillWithFabricPull();
   let arcSize = cellSize - 10;
   arc(x, y, arcSize, arcSize, radians(270), radians(360));
   noStroke();
@@ -207,7 +240,7 @@ function blockArcTopRight(x, y, cellSize) {
 
 function blockArcBottomLeft(x, y, cellSize) {
   push();
-  randomGreenyYelloColorFill();
+  fillWithFabricPull();
   let arcSize = cellSize - 10;
   arc(x, y, arcSize, arcSize, radians(90), radians(180));
   noStroke();
@@ -216,7 +249,7 @@ function blockArcBottomLeft(x, y, cellSize) {
 
 function blockArcBottomRight(x, y, cellSize) {
   push();
-  randomGreenyYelloColorFill();
+  fillWithFabricPull();
   let arcSize = cellSize - 10;
   arc(x, y, arcSize, arcSize, radians(0), radians(90));
   noStroke();
@@ -227,7 +260,7 @@ function blockArcBottomRight(x, y, cellSize) {
 // TODO
 function blockDiamondInSquare(cellSize) {
   push();
-  randomGreenyYelloColorFill();
+  fillWithFabricPull();
   beginShape();
   vertex(0, 35);
   vertex(35, 0);
@@ -242,15 +275,16 @@ function randomColorFill() {
   fill(random(0, 255), random(0, 255), random(0, 255));
 }
 
-function randomGreenyYelloColorFill() {
-  const colors = ["#0C335E", "#0D7818", "#6FB01D", "#B5BF1D", "#f4f722"];
+function fillWithFabricPull() {
+  if (palette.length == 0) {
+    fill("#FFFFFF")
+    return
+  }
 
-  fill(colors[Math.round(random(0, 4))]);
+  fill(palette[Math.round(random(0, palette.length-1))]);
 }
 
 function randomColorMindPalette() {
-  // const colors = ["#0C335E", "#0D7818", "#6FB01D", "#B5BF1D", "#EDEF0C"];
-
   fill(palette[Math.round(random(0, 4))]);
 }
 

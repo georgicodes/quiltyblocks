@@ -1,0 +1,40 @@
+.palette {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.palette_box {
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.palette_color {
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.color_name {
+  visibility: hidden;
+}
+
+.flex-parent-element {
+  display: flex;
+  width: 100%;
+}
+
+.flex-child-element {
+  flex: 1;
+  margin: 10px;
+}
+
+.flex-child-element:first-child {
+  margin-right: 20px;
+}
